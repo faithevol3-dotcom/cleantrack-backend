@@ -13,6 +13,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const scheduleRoutes = require("./routes/scheduleRoutes");
+const summaryRoutes = require("./routes/summaryRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -54,6 +55,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/schedules", scheduleRoutes);
+app.use("/api/summary", summaryRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
